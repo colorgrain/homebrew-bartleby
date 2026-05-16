@@ -1,0 +1,32 @@
+name: Update Cask
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'New version (e.g. 1.0.0)'
+        required: true
+      sha256:
+        description: 'SHA256 of the .dmg'
+        required: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update formula
+        run: |
+          sed -i "s/version \".*\"/version \"${{ inputs.version }}\"/" Casks/bartleby.rb
+          sed -i "s/sha256 \".*\"/sha256 \"${{ inputs.sha256 }}\"/" Casks/bartleby.rb
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Casks/bartleby.rb
+          git commit -m "chore: bump to v${{ inputs.version }}"
+          git push
