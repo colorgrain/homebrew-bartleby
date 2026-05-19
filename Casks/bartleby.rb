@@ -1,8 +1,8 @@
 cask "bartleby" do
-  version "0.1.0-4"
-  sha256 "53049caeaf2aaa133fd6e777050abd45e0c3e207782e3e3aa2454639ba9d4947"
+  version "0.1.0-5"
+  sha256 "b9fd836240d47e0368cc1738cbe5cee4363efa38c7fcce4350eb5eed4471c785"
 
-  url "https://github.com/colorgrain/Bartleby/releases/download/v#{version}/Bartleby_#{version}_universal.dmg"
+  url "https://github.com/colorgrain/Bartleby/releases/download/v#{version}/Bartleby_#{version}_aarch64.dmg"
   name "Bartleby"
   desc "Multi-destination file copy with MD5/XXH3 integrity verification"
   homepage "https://github.com/colorgrain/Bartleby"
