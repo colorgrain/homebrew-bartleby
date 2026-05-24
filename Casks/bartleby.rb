@@ -1,6 +1,6 @@
 cask "bartleby" do
-  version "0.1.0-5"
-  sha256 "8d7164ef71f0a7e534423966a9546b423f544da7b3217970fb5674b9d13a2fc1"
+  version "0.1.0-6"
+  sha256 "852a7deca46b2eb70c39ebe31f164af5e1faa08fe575571e0a092b99358e4bd9"
 
   url "https://github.com/colorgrain/Bartleby/releases/download/v#{version}/Bartleby_#{version}_aarch64.dmg"
   name "Bartleby"
